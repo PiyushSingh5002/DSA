@@ -30,4 +30,5 @@ int main() {
     cout << "[" << result[0] << "," << result[1] << "]" << endl;
 
     return 0;
-}
+}//this is the basic brute force 
+//this is my first code so i make it with pure brute force , like what i see i just implement in code this doesnt have any type of optamisation
