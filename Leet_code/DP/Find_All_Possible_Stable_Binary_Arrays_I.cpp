@@ -1,4 +1,5 @@
 class Solution {
+    // this is for 200 constrain and not for 1000 , 1000 one is for 2nd part 
 public:
     int M = 1e9 + 7;
     int t[201][201][2];
