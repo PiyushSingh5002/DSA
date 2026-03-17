@@ -19,7 +19,7 @@ public:
             vector<int> currRow = matrix[row];
             sort(begin(currRow), end(currRow), greater<int>());
             for(int col = 0; col < n; col++) {
-                int base   = (col+1); //iske peeche k columns me >= currRow[col] to hoga hi 1s
+                int base   = (col+1); 
                 int height = currRow[col];
                 
                 result = max(result, base*height);
