@@ -1,7 +1,7 @@
 
 class Solution {
 public:
-// this is going to be the linked list questionb
+// thisi 
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* l3 = new ListNode(0);
         ListNode *Head = l3;
