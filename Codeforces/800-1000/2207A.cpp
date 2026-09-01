@@ -1,33 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main() {
     int t;
     cin >> t;
-    while(t--){
+
+    while (t--) {
         int n;
         cin >> n;
+
         string s;
         cin >> s;
 
-        int minOnes = 0, maxOnes = 0;
-        int i = 1 ;
-        int count1 = 0 , count0 = 0;
-        int one  = 0;
-        s[0] == '1' ? one+= 1 : one += 0;
-        s[n - 1] == '1' ? one+=1 : one+=0;
-        while(i < n - 1){
-            if(s[i - 1] == '1' && s[i + 1] == '1'){
-                if(s[i] == '0')count0++;
-                else{
-                    count1++;
-                    one++;
-                }
+        int first = -1, last = -1, ones = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (s[i] == '1') {
+                ones++;
+                if (first == -1) first = i;
+                last = i;
             }
-            i++;
         }
-        minOnes = 
+
+        if (first == -1) {
+            cout << 0 << " " << 0 << "\n";
+            continue;
+        }
+
+        int len = last - first + 1;
+
+        int minOnes = len / 2 + 1;
+        int maxOnes = len;
 
         cout << minOnes << " " << maxOnes << "\n";
     }
+
+    return 0;
 }
