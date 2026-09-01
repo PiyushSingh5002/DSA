@@ -12,27 +12,29 @@ int main() {
         string s;
         cin >> s;
 
-        int first = -1, last = -1, ones = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (s[i] == '1') {
-                ones++;
-                if (first == -1) first = i;
-                last = i;
+        for (int i = 1; i < n - 1; i++) {
+            if (s[i - 1] == '1' && s[i + 1] == '1') {
+                s[i] = '1';
             }
         }
 
-        if (first == -1) {
-            cout << 0 << " " << 0 << "\n";
-            continue;
+        int mx = count(s.begin(), s.end(), '1');
+
+        for (int i = 1; i < n - 1; i++) {
+            if (s[i - 1] == '1' && s[i + 1] == '1') {
+                s[i] = '0';
+            }
         }
 
-        int len = last - first + 1;
+        for (int i = 1; i < n - 1; i++) {
+            if (s[i - 1] == '1' && s[i + 1] == '1') {
+                s[i] = '0';
+            }
+        }
 
-        int minOnes = len / 2 + 1;
-        int maxOnes = len;
+        int mn = count(s.begin(), s.end(), '1');
 
-        cout << minOnes << " " << maxOnes << "\n";
+        cout << mn << " " << mx << '\n';
     }
 
     return 0;
