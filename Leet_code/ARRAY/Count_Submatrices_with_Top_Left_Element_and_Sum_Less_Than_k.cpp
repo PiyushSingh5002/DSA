@@ -1,5 +1,3 @@
-class Solution {
-public:
     int countSubmatrices(vector<vector<int>>& grid, int k) {
         int m = grid.size();
         int n = grid[0].size();
@@ -16,4 +14,12 @@ public:
             }
         }return result;
     }
-};
+
+#include<iostream>
+using namespace std;
+int main(){
+
+    
+    countSubmatrices(grid , k);
+    return 0;
+}
