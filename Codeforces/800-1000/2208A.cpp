@@ -11,23 +11,25 @@ int main() {
     while (t--) {
         int n;
         cin >> n;
-
-        unordered_map<int, int> freq;
-        int mx = 0;
-
+        unordered_map<int , int> mp;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                int x;
+                int x ;
                 cin >> x;
-                freq[x]++;
-                mx = max(mx, freq[x]);
+                mp[x]++;
             }
         }
 
-        if (mx <= n * n - n)
+        int mx = 0;
+        for(auto [color , count] : mp){
+            mx = max(mx , count);
+        }
+
+        if (mx <= (n * n) - n) {
             cout << "YES\n";
-        else
+        } else {
             cout << "NO\n";
+        }
     }
 
     return 0;
