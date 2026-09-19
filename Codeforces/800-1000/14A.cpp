@@ -9,7 +9,7 @@ int main() {
 
     int minRow = n ; 
     int maxRow = -1 ; 
-    int minCol = m ;
+    int minCol = m ;    
     int maxCol = -1 ;
     for(int i = 0 ; i < n ; i++){
         for(int k = 0 ; k < m ; k++){
